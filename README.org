@@ -1,7 +1,7 @@
 * Set up
 
   1. Clone this repo.
-  2. Create an account for Mathpix OCR over at [Mathpix](https://mathpix.com/ocr).
+  2. Create an account for Mathpix OCR over at [[https://mathpix.com/ocr][Mathpix]].
   3. Insert your Mathpix OCR app id and key in ~auth.el.template~, and save it
      as a new ~auth.el.gpg~ file. ~math2latex~ will then load this file and your
      credentials.
