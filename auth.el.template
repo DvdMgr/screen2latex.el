@@ -1,0 +1,2 @@
+(setq mathpix_app_id "your_app_id")
+(setq mathpix_app_key "your_app_key")

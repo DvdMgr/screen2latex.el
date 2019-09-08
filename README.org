@@ -1,0 +1,24 @@
+* Set up
+
+  1. Clone this repo.
+  2. Create an account for Mathpix OCR over at [Mathpix](https://mathpix.com/ocr).
+  3. Insert your Mathpix OCR app id and key in ~auth.el.template~, and save it
+     as a new ~auth.el.gpg~ file. ~math2latex~ will then load this file and your
+     credentials.
+  4. Load the ~math2latex.el~ file
+
+* Usage
+
+  1. Have the formula you want to convert ready on the screen somewhere
+  2. In emacs, move the pointer to where the LaTeX formula should go
+  3. M-x math2latex
+  4. Draw box around the formula you want to convert
+  5. LaTeX version of your formula will appear at point
+
+* Next tasks
+
+  - [ ] Create logo for project
+  - [ ] Make this into package format
+  - [ ] Make demonstrative video
+  - [ ] Split functionality in ~math2latex.el~ over multiple functions
+  - [ ] Test this on Linux
