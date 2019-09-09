@@ -16,7 +16,7 @@
       (call-process "screencapture" nil nil nil "-i" filename)))
    ((string-equal system-type "gnu/linux") ; Linux
     (progn
-      (call-process "gnome-screenshot" nil nil nil "-a" filename)))
+      (call-process "gnome-screenshot" nil nil nil "-a" "-f" filename)))
    )
 
   ;; Convert the image to base64
