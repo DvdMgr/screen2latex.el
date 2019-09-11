@@ -5,6 +5,4 @@
 *.log
 auto
 *.gpg
-test.pdf
-test.tex
 *.DS_Store
