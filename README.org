@@ -17,10 +17,14 @@
   4. Draw box around the formula you want to convert
   5. LaTeX version of your formula will appear at point
 
-* Next tasks
+* Next tasks [2/6]
 
-  - [ ] Create logo for project
   - [ ] Make this into package format
   - [ ] Make demonstrative video
   - [ ] Split functionality in ~math2latex.el~ over multiple functions
-  - [ ] Test this on Linux
+  - [ ] Better handle response from Mathpix
+    - [ ] Define :complete function separately
+    - [ ] Print a message when response says no formula was detected
+    - [ ] Print confidence level in case conversion is successful
+  - [X] Create logo for project
+  - [X] Test this on Linux
