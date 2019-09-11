@@ -10,8 +10,8 @@
     (progn
       (call-process "gnome-screenshot" nil nil nil "-a" "-f" filename)))
    )
-
   )
+
 (defun screen2latex ()
   "Get a screenshot for a mathematical formula and insert the corresponding LaTeX at point."
 
