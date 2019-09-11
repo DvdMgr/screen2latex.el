@@ -1,4 +1,4 @@
-(defun math2latex ()
+(defun screen2latex ()
   "Get a screenshot for a mathematical formula and insert the corresponding LaTeX at point."
 
   (interactive)
