@@ -1,13 +1,5 @@
-(defun screen2latex ()
-  "Get a screenshot for a mathematical formula and insert the corresponding LaTeX at point."
-
-  (interactive)
-
-  (require 'request) ;; We need request to call the Mathpix API
-
-  ;; Load secrets
-  (setq filename "/tmp/screentemp.png")
-  (load-file "auth.el.gpg")
+(defun screen2latex-get-screenshot (filename)
+  "Get a screenshot, and save it at filename"
 
   ;; Use the appropriate program to take the screenshot, based on the os
   (cond
@@ -18,6 +10,20 @@
     (progn
       (call-process "gnome-screenshot" nil nil nil "-a" "-f" filename)))
    )
+
+  )
+(defun screen2latex ()
+  "Get a screenshot for a mathematical formula and insert the corresponding LaTeX at point."
+
+  (interactive)
+
+  (require 'request) ;; We need request to call the Mathpix API
+
+  ;; Load secrets
+  (load-file "auth.el.gpg")
+
+  ;; Temporary file where to save the screenshot
+  (setq filename "/tmp/screentemp.png")
 
   ;; Convert the image to base64
   (setq image-buffer (find-file-noselect filename t t))
