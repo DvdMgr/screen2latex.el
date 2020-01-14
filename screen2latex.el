@@ -7,7 +7,7 @@
 ;; Keywords: convenience, languages, multimedia, tex
 ;; URL: https://github.com/DvdMgr/screen2latex.el
 
-;;; Commentary:
+;;; Commentary:\frac{d}{d t} \iint_{\Sigma} \mathbf{B} \cdot \mathrm{d} \mathbf{S}=\iint_{\Sigma} \frac{\partial \mathbf{B}}{\partial t} \cdot \mathrm{d} \mathbf{S}
 ;; This package allows you to select an area of the screen containing an
 ;; equation, and get the corresponding LaTeX code inserted in the current buffer
 ;; at point. To use it, simply M-x screen2latex.
@@ -23,8 +23,13 @@
     (progn
       (call-process "screencapture" nil nil nil "-i" filename)))
    ((string-equal system-type "gnu/linux") ; Linux
+    ;; (progn
+    ;;   (call-process "gnome-screenshot" nil nil nil "-a" "-f" filename))
     (progn
-      (call-process "gnome-screenshot" nil nil nil "-a" "-f" filename)))))
+      (call-process "scrot" nil nil nil "-s" filename))
+    )))
+
+
 
 (defun screen2latex ()
   "Get a screenshot for a mathematical formula and insert the corresponding LaTeX at point."
@@ -34,10 +39,13 @@
   (require 'request) ;; We need request to call the Mathpix API
 
   ;; Load secrets
-  (load-file "auth.el.gpg")
+  (load-file (expand-file-name "~/.auth.el.gpg"))
 
   ;; Temporary file where to save the screenshot
   (setq filename "/tmp/screentemp.png")
+
+  ;; Get the screnshot
+  (screen2latex-get-screenshot filename)
 
   ;; Convert the image to base64
   (setq image-buffer (find-file-noselect filename t t))
